@@ -3,6 +3,7 @@ import { useState } from "react";
 import Perfil from "./components/Perfil";
 import Formulario from "./components/Formulario";
 import ReposList from "./components/reposList";
+import Input from "./components/Input";
 
 function App() {
   const [formularioEstaVisivel, setFormularioEstaVisivel] = useState(true);
@@ -10,7 +11,7 @@ function App() {
 
   return(
     <>
-      <input type="text" onBlur={(e) => setNomeUsuario(e.target.value)} placeholder="Digite o nome de usuário" />
+      <Input setNomeUsuario={setNomeUsuario}/>
       
       {nomeUsuario.length > 4 && (
         <>

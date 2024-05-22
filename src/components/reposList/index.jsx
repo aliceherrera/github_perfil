@@ -7,14 +7,14 @@ const ReposList = ({ nomeUsuario }) => {
     const [estaCarregando, setEstaCarregando] = useState(true);
 
     useEffect(() => {
-        setEstaCarregando(true);
-        fetch(`https://api.github.com/users/${nomeUsuario}/repos`)
-        .then(res => res.json())
-        .then(resJson => {
-            setTimeout(() => {
-                setEstaCarregando(false);
-                setRepos(resJson);
-            }, 3000)
+            setEstaCarregando(true);
+            fetch(`https://api.github.com/users/${nomeUsuario}/repos`)
+            .then(res => res.json())
+            .then(resJson => {
+                setTimeout(() => {
+                    setEstaCarregando(false);
+                    setRepos(resJson);
+                }, 3000)
         })
     }, [nomeUsuario]);
 
